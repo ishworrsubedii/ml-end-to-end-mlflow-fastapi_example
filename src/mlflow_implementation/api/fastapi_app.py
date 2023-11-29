@@ -1,29 +1,24 @@
-from fastapi import FastAPI
 import numpy as np
-import mlflow.sklearn
-import uvicorn
+from fastapi import FastAPI, HTTPException
+from src.mlflow_implementation.api.api_base import logger_sys
 from src.mlflow_implementation.api.api_base.base import Item
+from src.mlflow_implementation.services.example_service import ExampleService
 
 app = FastAPI()
 
-# Load the model and scaler from MLflow
-model = mlflow.sklearn.load_model("mlruns/0/731267a6eb6341b58952a7cc05ca1d42/artifacts/model/MLmodel")
-scaler = mlflow.sklearn.load_model("mlruns/0/731267a6eb6341b58952a7cc05ca1d42/artifacts/scaler/MLmodel")
-
 
 @app.post("/predict")
-async def predict(item: Item):
-    """
+async def data_fetch(item: Item):
+    try:
+        features = np.array([[item.feature1, item.feature2, item.feature3, item.feature4]])
+        obj_example = ExampleService()
+        scaled_features, prediction = obj_example.main_prediction(features)
+        prediction = prediction.tolist()
 
-    :param item:
-    :return:
-    """
-    scaled_features = scaler.transform(np.array(item.features).reshape(1, -1))
+        logger_sys.info(f"Prediction successful for features: {features}, Prediction: {prediction}")
+        return {"prediction": prediction}
 
-    prediction = model.predict(scaled_features)[0]
-
-    return {"prediction": prediction}
-
-
-if __name__ == '__main__':
-    uvicorn.run(app, host="localhost", port=8000)
+    except Exception as e:
+        error_message = f"Prediction failed: {str(e)}"
+        logger_sys.error(error_message)
+        raise HTTPException(status_code=500, detail=error_message)

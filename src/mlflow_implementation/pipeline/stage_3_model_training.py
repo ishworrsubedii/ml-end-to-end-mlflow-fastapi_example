@@ -1,5 +1,5 @@
 from src.mlflow_implementation.config.configuration import ConfigFileManagement
-from src.mlflow_implementation.components.c_5_model_training import ModelTraining
+from src.mlflow_implementation.components.c_3_model_training import ModelTraining
 from src.mlflow_implementation import logger
 
 

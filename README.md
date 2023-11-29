@@ -109,3 +109,6 @@ File structure of the project
 ### Docker
 ```commandline
 ```
+
+# Recommendations
+Your recommendations are highly valuable, and I highly value your insights and suggestions to enhance this project! Feel free to propose new features, report bugs, or suggest improvements.

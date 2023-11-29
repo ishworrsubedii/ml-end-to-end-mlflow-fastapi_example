@@ -9,9 +9,17 @@ class DataPreprocess:
 
     def split_data(self, X, y):
         """
-        :param X: Input Features
-        :param y:Target columns
-        :return:
+        Split the data into training and testing sets.
+
+        Args:
+        - X: Input Features
+        - y: Target columns
+
+        Returns:
+        - X_train: Training features
+        - X_test: Testing features
+        - y_train: Training target
+        - y_test: Testing target
         """
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=self.param.test_size,
                                                             random_state=self.param.random_state)
@@ -19,11 +27,19 @@ class DataPreprocess:
 
     def scale_features(self, X_train, X_test):
         """
-        :param X_train:  training dataset
-        :param X_test: test dataset
-        :return:
+        Scale the features using StandardScaler.
+
+        Args:
+        - X_train: Training dataset
+        - X_test: Test dataset
+
+        Returns:
+        - X_train_scaled: Scaled training features
+        - X_test_scaled: Scaled testing features
+        - scaler: StandardScaler object fitted on the training data
         """
         scaler = StandardScaler()
+
         X_train_scaled = scaler.fit_transform(X_train)
         X_test_scaled = scaler.transform(X_test)
 

@@ -10,7 +10,7 @@ class DataCreationPipeline:
     def main(self):
         """
 
-        :return:
+        :return:X,y
         """
         param = ConfigFileManagement()
         data_generation_param = param.get_data_creation_config()

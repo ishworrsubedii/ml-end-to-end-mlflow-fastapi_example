@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ishwor/Documents/simple_implementation_mlops-mlflow/mlruns/0/731267a6eb6341b58952a7cc05ca1d42/artifacts
+end_time: 1701102885274
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 731267a6eb6341b58952a7cc05ca1d42
+run_name: bustling-lynx-938
+run_uuid: 731267a6eb6341b58952a7cc05ca1d42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701102881542
+status: 3
+tags: []
+user_id: ishwor

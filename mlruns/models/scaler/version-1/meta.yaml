@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1701102883626
+current_stage: None
+description: null
+last_updated_timestamp: 1701102883626
+name: scaler
+run_id: 731267a6eb6341b58952a7cc05ca1d42
+run_link: null
+source: file:///home/ishwor/Documents/simple_implementation_mlops-mlflow/mlruns/0/731267a6eb6341b58952a7cc05ca1d42/artifacts/scaler
+status: READY
+status_message: null
+storage_location: file:///home/ishwor/Documents/simple_implementation_mlops-mlflow/mlruns/0/731267a6eb6341b58952a7cc05ca1d42/artifacts/scaler
+user_id: null
+version: 1

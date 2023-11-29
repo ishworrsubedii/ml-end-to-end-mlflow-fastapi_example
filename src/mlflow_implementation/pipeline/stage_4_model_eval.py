@@ -9,18 +9,20 @@ class ModelEvalPipeline:
 
     def main(self, y_test, model, X_test_scaled):
         """
-        Main function to execute the model evaluation pipeline.
+        Execute the model evaluation pipeline.
 
-        :param y_test: y_test dataset.
-        :param model: Model object.
-        :param X_test_scaled: Scaled values of X_test.
+        :param y_test: Test labels.
+        :param model: Trained model object.
+        :param X_test_scaled: Scaled test features.
         :return: Accuracy score or None if an exception occurs.
         """
         try:
-            param = ConfigFileManagement()
-            model_training_param = param.get_model_eval_config()
-            model_eval = ModelEvaluation(param=model_training_param)
-            accuracy = model_eval.accuracy(y_test, model, X_test_scaled)
+            config_manager = ConfigFileManagement()
+            model_eval_params = config_manager.get_model_eval_config()
+
+            model_evaluator = ModelEvaluation(param=model_eval_params)
+            accuracy = model_evaluator.accuracy(y_test, model, X_test_scaled)
+
             logger.info("Model evaluation pipeline executed successfully.")
             return accuracy
         except Exception as e:

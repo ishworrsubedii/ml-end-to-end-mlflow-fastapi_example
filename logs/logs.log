@@ -1,20 +1,46 @@
-[2023-11-27 22:19:41,360: INFO: main: >>------ State Data Creation Stage started -------<<]
-[2023-11-27 22:19:41,361: INFO: utils: yaml file: config/config.yaml loaded successfully]
-[2023-11-27 22:19:41,363: INFO: utils: yaml file: params.yaml loaded successfully]
-[2023-11-27 22:19:41,364: INFO: c_1_data_creation:  Dataset Created with provided info: 
-]
-[2023-11-27 22:19:41,364: INFO: main: >>------ State Data Creation Stage completed -------<<]
-[2023-11-27 22:19:41,364: INFO: main: >>------ State Data Preprocess Stage started -------<<]
-[2023-11-27 22:19:41,364: INFO: utils: yaml file: config/config.yaml loaded successfully]
-[2023-11-27 22:19:41,365: INFO: utils: yaml file: params.yaml loaded successfully]
-[2023-11-27 22:19:41,366: INFO: main: >>------ State Data Preprocess Stage completed -------<<]
-[2023-11-27 22:19:41,367: INFO: main: >>------ State Model Training Stage started -------<<]
-[2023-11-27 22:19:41,367: INFO: utils: yaml file: config/config.yaml loaded successfully]
-[2023-11-27 22:19:41,368: INFO: utils: yaml file: params.yaml loaded successfully]
-[2023-11-27 22:19:41,502: INFO: main: >>------ State Model Training Stage completed -------<<]
-[2023-11-27 22:19:41,502: INFO: main: >>------ State Model Evaluation Stage started -------<<]
-[2023-11-27 22:19:41,502: INFO: utils: yaml file: config/config.yaml loaded successfully]
-[2023-11-27 22:19:41,503: INFO: utils: yaml file: params.yaml loaded successfully]
-[2023-11-27 22:19:41,508: INFO: c_4_model_eval: Accuracy calculated successfully.]
-[2023-11-27 22:19:41,508: INFO: stage_4_model_eval: Model evaluation pipeline executed successfully.]
-[2023-11-27 22:19:41,508: INFO: main: >>------ State Model Evaluation Stage completed -------<<]
+[2023-11-29 18:27:01,413: INFO: main_traning: >>------ State Data Creation Stage started -------<<]
+[2023-11-29 18:27:01,414: INFO: utils: YAML file 'config/config.yaml' loaded successfully]
+[2023-11-29 18:27:01,426: INFO: utils: YAML file 'params.yaml' loaded successfully]
+[2023-11-29 18:27:01,426: ERROR: main_traning: 'CreateSyntheticDataset' object has no attribute 'create_synthetic_dataset']
+Traceback (most recent call last):
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/main_traning.py", line 14, in stage_one
+    X, y = obj.main()
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/src/mlflow_implementation/pipeline/stage_1_data_creation.py", line 18, in main
+    X, y = data_creation.create_synthetic_dataset()
+AttributeError: 'CreateSyntheticDataset' object has no attribute 'create_synthetic_dataset'
+[2023-11-29 18:27:01,427: ERROR: main_traning: 'CreateSyntheticDataset' object has no attribute 'create_synthetic_dataset']
+Traceback (most recent call last):
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/main_traning.py", line 68, in <module>
+    X, y = stage_one()
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/main_traning.py", line 19, in stage_one
+    raise e
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/main_traning.py", line 14, in stage_one
+    X, y = obj.main()
+  File "/home/ishwor/Documents/simple_implementation_mlops-mlflow/src/mlflow_implementation/pipeline/stage_1_data_creation.py", line 18, in main
+    X, y = data_creation.create_synthetic_dataset()
+AttributeError: 'CreateSyntheticDataset' object has no attribute 'create_synthetic_dataset'
+[2023-11-29 18:28:01,880: INFO: main_traning: >>------ State Data Creation Stage started -------<<]
+[2023-11-29 18:28:01,881: INFO: utils: YAML file 'config/config.yaml' loaded successfully]
+[2023-11-29 18:28:01,882: INFO: utils: YAML file 'params.yaml' loaded successfully]
+[2023-11-29 18:28:01,898: INFO: c_1_data_creation: Dataset Created with provided info: Samples=1000, Features=4, Classes=2, Random State=42]
+[2023-11-29 18:28:01,898: INFO: main_traning: >>------ State Data Creation Stage completed -------<<]
+[2023-11-29 18:28:01,898: INFO: main_traning: >>------ State Data Preprocess Stage started -------<<]
+[2023-11-29 18:28:01,899: INFO: utils: YAML file 'config/config.yaml' loaded successfully]
+[2023-11-29 18:28:01,900: INFO: utils: YAML file 'params.yaml' loaded successfully]
+[2023-11-29 18:28:01,902: INFO: main_traning: >>------ State Data Preprocess Stage completed -------<<]
+[2023-11-29 18:28:01,902: INFO: main_traning: >>------ State Model Training Stage started -------<<]
+[2023-11-29 18:28:01,903: INFO: utils: YAML file 'config/config.yaml' loaded successfully]
+[2023-11-29 18:28:01,904: INFO: utils: YAML file 'params.yaml' loaded successfully]
+[2023-11-29 18:28:02,127: INFO: main_traning: >>------ State Model Training Stage completed -------<<]
+[2023-11-29 18:28:02,127: INFO: main_traning: >>------ State Model Evaluation Stage started -------<<]
+[2023-11-29 18:28:02,127: INFO: utils: YAML file 'config/config.yaml' loaded successfully]
+[2023-11-29 18:28:02,129: INFO: utils: YAML file 'params.yaml' loaded successfully]
+[2023-11-29 18:28:02,137: INFO: c_4_model_eval: Accuracy calculated successfully.]
+[2023-11-29 18:28:02,137: INFO: stage_4_model_eval: Model evaluation pipeline executed successfully.]
+[2023-11-29 18:28:02,137: INFO: main_traning: >>------ State Model Evaluation Stage completed -------<<]
+[2023-11-29 18:29:54,683: INFO: inference: -------------Fast Api server Started----------]
+[2023-11-29 19:37:15,431: INFO: streamlit_app: -------------Streamlit server Started----------]
+[2023-11-29 19:37:15,834: INFO: example_service: ExampleService initialized successfully.]
+[2023-11-29 19:37:15,838: INFO: example_service: Prediction made successfully.]
+[2023-11-29 19:37:15,839: INFO: fastapi_app: Prediction successful for features: [[1. 2. 1. 2.]], Prediction: [1]]
+[2023-11-29 20:04:15,802: INFO: streamlit_app: -------------Streamlit server Started----------]
